@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { Link } from '@nextui-org/link';
+import { Link as NavLink } from '../../navigation';
 import { button as buttonStyles } from '@nextui-org/theme';
 import { title, subtitle } from '@/components/primitives';
 import clsx from 'clsx';
@@ -88,7 +89,7 @@ export default function Home({ params: { locale } }: Props) {
             </div>
 
             <div className='flex flex-col md:flex-row items-center gap-4 justify-center'>
-              <Link
+              <NavLink
                 href='/test'
                 className={clsx(
                   buttonStyles({
@@ -102,7 +103,7 @@ export default function Home({ params: { locale } }: Props) {
                 )}
               >
                 {t('call_to_action')} <ArrowRightIcon />
-              </Link>
+              </NavLink>
               <Link
                 isExternal
                 className={clsx(
@@ -164,7 +165,7 @@ export default function Home({ params: { locale } }: Props) {
                 aria-label={t('call_to_action')}
                 className='z-50 w-auto h-auto bg-gradient-to-b from-[#FF1CF7] to-[#7928CA]'
                 radius='full'
-                as={Link}
+                as={NextLink}
                 href='/test'
               >
                 <PlusLinearIcon
@@ -210,7 +211,7 @@ export default function Home({ params: { locale } }: Props) {
                   style={e.style}
                   className='absolute hidden md:inline-flex hover:bg-secondary'
                   variant='bordered'
-                  as={Link}
+                  as={NextLink}
                   href={e.href}
                   aria-label={e.name}
                 >
@@ -226,7 +227,7 @@ export default function Home({ params: { locale } }: Props) {
                     content: 'drop-shadow shadow-black text-white w-full w-36'
                   }}
                   style={e.smallStyle}
-                  as={Link}
+                  as={NextLink}
                   href={e.href}
                 >
                   {e.name}
