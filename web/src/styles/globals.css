@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@media print {
+  @page {
+    size: A3;
+    margin: 10px; /* Adjust the margin if necessary */
+  }
+  
+  /* You can also add custom styles for print view */
+  body {
+    -webkit-print-color-adjust: exact; /* Ensure colors are printed as seen on screen */
+  }
+}
+
 h3 {
   @apply text-xl;
 }
