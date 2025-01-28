@@ -35,6 +35,11 @@ export const Navbar = ({ navItems, navMenuItems }: NavbarProps) => {
   const pathname = usePathname();
   const locale = useLocale();
 
+  // Check if the current path is `/testnew`
+  if (pathname === '/test_v1') {
+    return null; // Do not render the Navbar on `/testnew`
+  }
+
   const isCurrentPath = (link: string): boolean => {
     if (link === '/') {
       return pathname === '/' || pathname === `/${locale}`;
